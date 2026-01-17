@@ -114,8 +114,9 @@ class Model:
                 distanza1= distanza+dist
                 tupla_parziali.append((starting_node,i,peso,dist))
                 self.ricorsione(distanza1,lista_parziale,tupla_parziali,i,peso)
-            lista_parziale.pop()
-            tupla_parziali.pop()
+                tupla_parziali.pop()
+                lista_parziale.pop()
+
 
     def controllo_vicini(self,vicini,staring_node,peso_precedente,lista_parziale):
         lista = []
