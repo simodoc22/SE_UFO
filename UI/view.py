@@ -24,13 +24,16 @@ class View:
     def update(self):
         self.page.update()
 
+    def onchange(self,e):
+        self.controller.inserisci_forma(e.control.value)
+
     def load_interface(self):
         """ Crea e aggiunge gli elementi di UI alla pagina e la aggiorna. """
         # Intestazione
         self.txt_titolo = ft.Text(value="Avvistamenti UFO", size=30, weight=ft.FontWeight.BOLD)
 
         # Riga 1
-        self.dd_year = ft.Dropdown(label="Anno", width=200)
+        self.dd_year = ft.Dropdown(label="Anno", width=200,on_change= self.onchange)
         self.dd_shape = ft.Dropdown(label="Forma", width=200)
         self.pulsante_graph = ft.ElevatedButton(text="Crea Grafo", on_click=self.controller.handle_graph)
 
